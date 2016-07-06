@@ -10,5 +10,4 @@ class ZoosController < ApplicationController
   def new
     @zoo = Zoos.new
   end
-
 end
