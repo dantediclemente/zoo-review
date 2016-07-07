@@ -188,9 +188,6 @@ SignalException:
 SpecialGlobalVars:
   Enabled: false
 
-StringLiterals:
-  Enabled: false
-
 VariableInterpolation:
   Enabled: false
 
@@ -279,4 +276,3 @@ Metrics/AbcSize:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-  
