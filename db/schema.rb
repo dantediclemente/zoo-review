@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160706202722) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",    null: false
-    t.integer  "zoos_id",    null: false
+    t.integer  "zoo_id",    null: false
   end
 
   create_table "users", force: :cascade do |t|
