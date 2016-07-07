@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Zoos, type: :model do
+RSpec.describe Zoo, type: :model do
   it { is_expected.to have_valid(:name).when('Big Zoo') }
   it { is_expected.to have_valid(:address).when('23 Somesher Road') }
   it { is_expected.to have_valid(:city ).when('Boston') }

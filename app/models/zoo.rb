@@ -1,4 +1,4 @@
-class Zoos < ActiveRecord::Base
+class Zoo < ActiveRecord::Base
   has_many :reviews
   belongs_to :user
 

@@ -1,0 +1,21 @@
+<h3>New Zoo Form</h3>
+
+<%= form_for @zoo do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address, "Address" %>
+  <%= f.text_field :address %>
+
+  <%= f.label :city, "City" %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state , "State" %>
+  <%= f.text_field :state %>
+
+  <%= f.label :zip , "Zip Code" %>
+  <%= f.text_field :zip %>
+
+
+  <%= f.submit "Add Zoo"%>
+  <% end %>
