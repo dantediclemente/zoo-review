@@ -1,7 +1,5 @@
-<h1>Zoos</h1>
+<h1 class="row">Zoos</h1>
 
 <% @zoos.each do |zoo| %>
   <%= link_to zoo.name, zoo_path(zoo) %>
 <% end %>
-
-<%= link_to "Add New Zoo", new_zoo_path %>

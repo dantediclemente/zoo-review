@@ -1,4 +1,4 @@
-class Zoos < ActiveRecord::Base
+class Zoo < ActiveRecord::Base
   validates :name, presence: true
   validates :address, presence: true
   validates :city, presence: true

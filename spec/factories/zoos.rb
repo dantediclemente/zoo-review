@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :zoos do
+  factory :zoo do
     sequence(:name) {|n| "Zoo #{n}" }
     sequence(:address) {|n| "Address #{n}" }
     sequence(:city) {|n| "City #{n}" }
