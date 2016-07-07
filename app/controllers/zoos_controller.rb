@@ -16,7 +16,7 @@ class ZoosController < ApplicationController
     @zoo.user_id = current_user.id
 
     if @zoo.save
-      flash[:notice]="Zoo added successfully"
+      flash[:notice] = "Zoo added successfully"
       redirect_to zoo_path(@zoo)
     else
       flash[:errors] = @zoo.errors.full_messages.join(",")
@@ -30,14 +30,14 @@ class ZoosController < ApplicationController
   end
 
   private
+
   def zoo_params
-      params.require(:zoo).permit(
+    params.require(:zoo).permit(
       :name,
       :address,
       :city,
       :state,
       :zip
-      )
-    end
-
+    )
+  end
 end
