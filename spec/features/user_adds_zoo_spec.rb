@@ -2,6 +2,8 @@ require 'rails_helper'
 feature "visitor sees a list of zoos" do
   scenario "user adds a zoo successfully" do
 
+    log_in_user
+
     visit new_zoo_path
     expect(page).to have_content "New Zoo Form"
 
@@ -19,6 +21,8 @@ feature "visitor sees a list of zoos" do
 
   scenario "visitor does not provide proper information for a Zoo" do
 
+    log_in_user
+    
     visit new_zoo_path
 
     click_button "Add Zoo"

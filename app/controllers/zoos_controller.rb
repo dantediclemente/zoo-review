@@ -13,6 +13,7 @@ class ZoosController < ApplicationController
 
   def create
     @zoo = Zoo.new(zoo_params)
+    @zoo.user_id = current_user.id
 
     if @zoo.save
       flash[:notice]="Zoo added successfully"
@@ -21,6 +22,11 @@ class ZoosController < ApplicationController
       flash[:errors] = @zoo.errors.full_messages.join(",")
       render :new
     end
+  end
+
+  def search
+    @results = Zoo.where("name ILIKE ?", "%#{params[:q]}%")
+    render :search
   end
 
   private
