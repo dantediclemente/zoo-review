@@ -27,19 +27,19 @@
           <% end %>
         </ul>
       </div>
-  <div class="top-bar-right">
-    <%= form_tag("/zoos/search", method: "get") do %>
-    <ul class="menu">
-      <li>
-        <%= text_field_tag(:q) %>
-      </li>
-      <li>
-        <%= submit_tag("Search") %>
-      </li>
-    </ul>
-      <% end %>
-  </div>
-</div>
+      <div class="top-bar-right">
+        <%= form_tag("/zoos/search", method: "get") do %>
+        <ul class="menu">
+          <li>
+            <%= text_field_tag(:q) %>
+          </li>
+          <li>
+            <%= submit_tag("Search") %>
+          </li>
+        </ul>
+          <% end %>
+      </div>
+    </div>
 
     <% flash.each do |name, msg| %>
        <% if msg.is_a?(String) %>
