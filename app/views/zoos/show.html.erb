@@ -5,22 +5,29 @@
   <h6><%= @zoo.state %></h6>
   <h6><%= @zoo.zip %></h6>
 
-  <%= form_for ([@zoo, @review]) do |f| %>
-    <%= f.label :body, "Comment" %>
-    <%= f.text_field :body %>
+<%= form_for ([@zoo, @review]) do |f| %>
+  <%= f.label :body, "Comment" %>
+  <%= f.text_field :body %>
 
-    <%= f.label :rating, "Rating"%>
-    <%= f.collection_radio_buttons(:rating, @rating_collection, :first, :last) %>
+  <%= f.label :rating, "Rating"%>
+  <%= f.collection_radio_buttons(:rating, @rating_collection, :first, :last) %>
 
-    <%= f.submit "Add Review"%>
+  <%= f.submit "Add Review"%>
+<% end %>
+
+<% @reviews.each do |review| %>
+  <ul>
+    <li><%= review.user.email %></li>
+    <li>Rating: <%= review.rating %></li>
+    <% if review.body != "" %>
+      <li><%= review.body %></li>
     <% end %>
+  </ul>
+<% end %>
 
-    <% @reviews.each do |review| %>
-    <ul>
-      <li><%= review.user.email %></li>
-      <li>Rating: <%= review.rating %></li>
-      <% if review.body != "" %>
-        <li><%= review.body %></li>
-      <% end %>
-    </ul>
-    <% end %>
+<% if user_signed_in? %>
+  <% if current_user.id == @zoo.user_id %>
+    <%= link_to "Edit Zoo", edit_zoo_path(@zoo) %>
+    <%= link_to "Delete Zoo", zoo_path(@zoo), data: { :confirm => "Are you sure?" }, method: :delete %>
+  <% end %>
+<% end %>
