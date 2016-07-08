@@ -42,8 +42,8 @@ Style/OptionHash:
 Style/PercentLiteralDelimiters:
   Description: Use `%`-literal delimiters consistently
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-literal-braces
-  Enabled: true
-  PreferredDeli miters:
+  Enabled: false
+  PreferredDelimiters:
     "%": "()"
     "%i": "()"
     "%q": "()"
