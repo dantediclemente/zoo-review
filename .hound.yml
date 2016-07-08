@@ -210,7 +210,7 @@ WhileUntilModifier:
   Enabled: false
 
 WordArray:
-  Enabled: false
+  Enabled: true
 
 # Lint
 
@@ -279,4 +279,4 @@ Metrics/AbcSize:
 
 ruby:
   config_file: .ruby-style.yml
-  enabled: true 
+  enabled: true
