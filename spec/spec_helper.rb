@@ -53,3 +53,10 @@ def create_zoo
   expect(page).to have_content "Franklin Park Zoo"
   expect(page).to have_content "105 Beach St"
 end
+
+def write_review
+  click_link "Franklin Park Zoo"
+  fill_in 'Comment', with: "This zoo is awesome!"
+  choose(5)
+  click_button "Add Review"
+end
