@@ -5,6 +5,9 @@ class ZoosController < ApplicationController
 
   def show
     @zoo = Zoo.find(params[:id])
+    @review = Review.new
+    @rating_collection = Review::RATING
+    @reviews = @zoo.reviews 
   end
 
   def new
