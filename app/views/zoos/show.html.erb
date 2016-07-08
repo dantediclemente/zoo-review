@@ -4,3 +4,11 @@
   <h6><%= @zoo.city %></h6>
   <h6><%= @zoo.state %></h6>
   <h6><%= @zoo.zip %></h6>
+
+
+<% if user_signed_in? %>
+  <% if current_user.id == @zoo.user_id %>
+    <%= link_to "Edit Zoo", edit_zoo_path(@zoo) %>
+    <%= link_to "Delete Zoo", zoo_path(@zoo), data: { :confirm => "Are you sure?" }, method: :delete %>
+  <% end %>
+<% end %>
