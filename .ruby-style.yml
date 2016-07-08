@@ -49,9 +49,9 @@ Style/PercentLiteralDelimiters:
     "%q": "()"
     "%Q": "()"
     "%r": "{}"
-    "%s": "()"
     "%w": "()"
     "%W": "()"
+    "%s": "()"
     "%x": "()"
 Style/PredicateName:
   Description: Check the names of predicate methods.
