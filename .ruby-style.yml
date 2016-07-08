@@ -42,13 +42,15 @@ Style/OptionHash:
 Style/PercentLiteralDelimiters:
   Description: Use `%`-literal delimiters consistently
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-literal-braces
-  Enabled: false
+  Enabled: true
   PreferredDeli miters:
     "%": "()"
     "%i": "()"
     "%q": "()"
     "%Q": "()"
     "%r": "{}"
+    "%w": "()"
+    "%W": "()"
     "%s": "()"
     "%x": "()"
 Style/PredicateName:
