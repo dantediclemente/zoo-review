@@ -7,7 +7,7 @@ class ZoosController < ApplicationController
     @zoo = Zoo.find(params[:id])
     @review = Review.new
     @rating_collection = Review::RATING
-    @reviews = @zoo.reviews 
+    @reviews = @zoo.reviews
   end
 
   def new
