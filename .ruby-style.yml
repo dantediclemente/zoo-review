@@ -43,14 +43,13 @@ Style/PercentLiteralDelimiters:
   Description: Use `%`-literal delimiters consistently
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-literal-braces
   Enabled: false
-  PreferredDelimiters:
+  PreferredDeli miters:
     "%": "()"
     "%i": "()"
     "%q": "()"
     "%Q": "()"
     "%r": "{}"
     "%s": "()"
-    "%W": "()"
     "%x": "()"
 Style/PredicateName:
   Description: Check the names of predicate methods.
