@@ -128,7 +128,7 @@ ModuleFunction:
   Enabled: false
 
 NegatedIf:
-  Enabled: false
+  Enabled: true
 
 NegatedWhile:
   Enabled: false
