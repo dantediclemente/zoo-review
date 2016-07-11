@@ -52,7 +52,9 @@ class ReviewsController < ApplicationController
   end
 
   def authorize_user
-    if !current_user.admin? && current_user.id != @zoo.user_id
+    @zoo = Zoo.find(params[:zoo_id])
+    @review = @zoo.reviews.find(params[:id])
+    if !current_user.admin? && current_user.id != @review.user_id
       raise ActionController::RoutingError.new("Not Found")
     end
   end

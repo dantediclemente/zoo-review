@@ -15,6 +15,7 @@ class ZoosController < ApplicationController
 
   def new
     @zoo = Zoo.new
+    @state_collection = Zoo::STATES
   end
 
   def create
@@ -25,6 +26,7 @@ class ZoosController < ApplicationController
       flash[:notice] = "Zoo added successfully"
       redirect_to zoo_path(@zoo)
     else
+      @state_collection = Zoo::STATES
       flash[:errors] = @zoo.errors.full_messages.join(",")
       render :new
     end
@@ -37,6 +39,7 @@ class ZoosController < ApplicationController
 
   def edit
     @zoo = Zoo.find(params[:id])
+    @state_collection = Zoo::STATES
   end
 
   def update
@@ -45,6 +48,7 @@ class ZoosController < ApplicationController
       flash[:notice] = "Zoo updated successfully"
       redirect_to zoo_path(@zoo)
     else
+      @state_collection = Zoo::STATES
       flash[:errors] = @zoo.errors.full_messages.join(",")
       render :edit
     end
