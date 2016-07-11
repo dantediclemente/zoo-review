@@ -1,0 +1,9 @@
+<%= form_for ([@zoo, @review]) do |f| %>
+  <%= f.label :body, "Comment" %>
+  <%= f.text_field :body %>
+
+  <%= f.label :rating, "Rating"%>
+  <%= f.collection_radio_buttons(:rating, @rating_collection, :first, :last) %>
+
+  <%= f.submit "Add Review"%>
+<% end %>

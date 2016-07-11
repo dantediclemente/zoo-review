@@ -46,7 +46,12 @@ def create_zoo
   fill_in 'State', with: "Massachusetts"
   fill_in 'Zip', with: "02111"
   click_button "Add Zoo"
-  # expect(page).to have_content "Zoo added successfully"
-  expect(page).to have_content "Franklin Park Zoo"
-  expect(page).to have_content "105 Beach St"
+end
+
+def write_review
+  visit root_path
+  click_link "Franklin Park Zoo"
+  fill_in 'Comment', with: "This zoo is awesome!"
+  choose(5)
+  click_button "Add Review"
 end

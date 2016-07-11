@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature "user edits zoo" do
+feature "user deletes zoo" do
   scenario "user adds a zoo successfully and deletes successfully" do
     create_zoo
     click_link "Delete Zoo"

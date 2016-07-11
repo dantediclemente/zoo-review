@@ -1,32 +1,31 @@
 <h1><%= @zoo.name %></h1>
+  <div class="zoo-info">
+    <h6><%= @zoo.address %></h6>
+    <h6><%= @zoo.city %></h6>
+    <h6><%= @zoo.state %></h6>
+    <h6><%= @zoo.zip %></h6>
+  </div>
 
-  <h6><%= @zoo.address %></h6>
-  <h6><%= @zoo.city %></h6>
-  <h6><%= @zoo.state %></h6>
-  <h6><%= @zoo.zip %></h6>
-
-<%= form_for ([@zoo, @review]) do |f| %>
-  <%= f.label :body, "Comment" %>
-  <%= f.text_field :body %>
-
-  <%= f.label :rating, "Rating"%>
-  <%= f.collection_radio_buttons(:rating, @rating_collection, :first, :last) %>
-
-  <%= f.submit "Add Review"%>
-<% end %>
+  <%= render partial: "review_form" %>
 
 <% @reviews.each do |review| %>
-  <ul>
+  <ul class="review-info">
     <li><%= review.user.email %></li>
     <li>Rating: <%= review.rating %></li>
     <% if review.body != "" %>
       <li><%= review.body %></li>
     <% end %>
+    <% if user_signed_in? %>
+      <% if current_user.id == review.user_id %>
+        <%= link_to "Edit Review", edit_zoo_review_path(@zoo, review) %>
+        <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %>
+      <% end %>
+    <% end %>
   </ul>
 <% end %>
 
 <% if user_signed_in? %>
-  <% if current_user.id == @zoo.user_id %>
+  <% if current_user.admin? || current_user.id == @zoo.user_id %>
     <%= link_to "Edit Zoo", edit_zoo_path(@zoo) %>
     <%= link_to "Delete Zoo", zoo_path(@zoo), data: { :confirm => "Are you sure?" }, method: :delete %>
   <% end %>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Zootopia" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -15,7 +15,8 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <h2 class="menu-text">Zoos Reviewed</h2>
+
+          <li class="menu-text">Zootopia</li>
           <li class="nav-buttons">
             <%= link_to "Home", root_path %>
           </li>
@@ -35,7 +36,7 @@
             <%= text_field_tag(:q) %>
           </li>
           <li>
-            <%= submit_tag("Search") %>
+            <%= submit_tag("Search", {:class => 'button'}) %>
           </li>
         </ul>
           <% end %>
