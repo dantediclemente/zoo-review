@@ -15,6 +15,33 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @zoo = Zoo.find(params[:zoo_id])
+    @review = @zoo.reviews.find(params[:id])
+    @rating_collection = Review::RATING
+  end
+
+  def update
+    @zoo = Zoo.find(params[:zoo_id])
+    @review = @zoo.reviews.find(params[:id])
+    @rating_collection = Review::RATING
+    if @review.update_attributes(review_params)
+      flash[:notice] = "Review updated successfully"
+      redirect_to zoo_path(@zoo)
+    else
+      flash[:errors] = @review.errors.full_messages.join(",")
+      render :edit
+    end
+  end
+
+  def destroy
+    @zoo = Zoo.find(params[:zoo_id])
+    @review = @zoo.reviews.find(params[:id])
+    @review.destroy
+    flash[:notice] = "Review deleted successfully"
+    redirect_to zoo_path(@zoo)
+  end
+
   private
 
   def review_params
