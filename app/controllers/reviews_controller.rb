@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user, only: [:destroy]
+
   def create
     @zoo = Zoo.find(params[:zoo_id])
     @review = Review.new(review_params)
@@ -45,6 +48,12 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:body, :rating)
+    params.require(:review).permit(:body, :rating, :user_id)
+  end
+
+  def authorize_user
+    if !current_user.admin? && current_user.id != @zoo.user_id
+      raise ActionController::RoutingError.new("Not Found")
+    end
   end
 end
