@@ -1,6 +1,6 @@
 require 'rails_helper'
 feature "user deletes review" do
-  before (:each) do
+  before(:each) do
     create_zoo
     write_review
   end
