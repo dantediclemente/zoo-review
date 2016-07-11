@@ -18,6 +18,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1', require: false
   gem 'valid_attribute'
   gem "dotenv-rails"
+  gem "carrierwave"
 end
 
 group :test do

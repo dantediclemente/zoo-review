@@ -128,7 +128,7 @@ ModuleFunction:
   Enabled: false
 
 NegatedIf:
-  Enabled: false
+  Enabled: true
 
 NegatedWhile:
   Enabled: false
@@ -269,7 +269,7 @@ Style/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 Style/EmptyLinesAroundBlockBody:
-  Enabled: false
+  Enabled: true
 
 Style/UnneededPercentQ:
   Enabled: false

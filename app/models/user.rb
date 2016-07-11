@@ -8,11 +8,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
-  # def image
-  #   "#{name}.gsub("")"
-  #
-  # end
-
   validates :email, uniqueness: true, presence: true
   validates :encrypted_password, presence: true
 end
