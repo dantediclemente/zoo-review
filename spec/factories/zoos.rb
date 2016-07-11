@@ -1,6 +1,11 @@
 FactoryGirl.define do
+  factory :user do
+    sequence(:email) { |n| "testemail#{n}@hotmail.com" }
+    password "123456"
+  end
+
   factory :zoo do
-    sequence(:user_id) { |n| "00#{n}" }
+    association :user
     sequence(:name) { |n| "Zoo #{n}" }
     sequence(:address) { |n| "Address #{n}" }
     sequence(:city) { |n| "City #{n}" }
