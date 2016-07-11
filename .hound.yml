@@ -269,7 +269,7 @@ Style/MultilineOperationIndentation:
   EnforcedStyle: indented
 
 Style/EmptyLinesAroundBlockBody:
-  Enabled: true
+  Enabled: false
 
 Style/UnneededPercentQ:
   Enabled: false
