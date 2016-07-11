@@ -25,7 +25,7 @@ class ReviewsController < ApplicationController
   end
 
   def authorize_user
-    if !user_signed_in? || !current_user.admin?
+    if !current_user.admin? && current_user.id != @zoo.user_id
       raise ActionController::RoutingError.new("Not Found")
     end
   end

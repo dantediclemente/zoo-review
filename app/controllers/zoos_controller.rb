@@ -1,6 +1,6 @@
 class ZoosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :authorize_user, only: [:destroy]
+  before_filter :authorize_user, only: [:destroy]
 
   def index
     @zoos = Zoo.all
@@ -70,7 +70,8 @@ class ZoosController < ApplicationController
   end
 
   def authorize_user
-    if !user_signed_in? || !current_user.admin?
+    @zoo = Zoo.find(params[:id])
+    if !current_user.admin? && current_user.id != @zoo.user_id
       raise ActionController::RoutingError.new("Not Found")
     end
   end
