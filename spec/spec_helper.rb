@@ -13,14 +13,12 @@ end
 
 def log_in_user
   visit root_path
-  click_link "Sign In"
-  click_link "Sign up"
-
+  click_link "Sign Up"
   fill_in 'Email', with: "test@gmail.com"
   fill_in 'Password', with: "password"
   fill_in 'Password confirmation', with: "password"
-
-  click_button "Sign up"
+  # attach_file :profile_photo, "#{Rails.root}/spec/support/images/photo.png"
+  click_button "Sign Up"
 end
 
 def sign_out
@@ -29,14 +27,13 @@ end
 
 def sign_in_as_dummy
   visit root_path
-  click_link "Sign In"
-  click_link "Sign up"
+  click_link "Sign Up"
 
   fill_in 'Email', with: "seconduser@gmail.com"
   fill_in 'Password', with: "password"
   fill_in 'Password confirmation', with: "password"
 
-  click_button "Sign up"
+  click_button "Sign Up"
 end
 
 def create_zoo
@@ -49,7 +46,7 @@ def create_zoo
   fill_in 'State', with: "Massachusetts"
   fill_in 'Zip', with: "02111"
   click_button "Add Zoo"
-  expect(page).to have_content "Zoo added successfully"
+  # expect(page).to have_content "Zoo added successfully"
   expect(page).to have_content "Franklin Park Zoo"
   expect(page).to have_content "105 Beach St"
 end
