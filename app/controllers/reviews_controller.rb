@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user, only: [:destroy]
 
   def create
     @zoo = Zoo.find(params[:zoo_id])
@@ -20,7 +21,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:body, :rating)
+    params.require(:review).permit(:body, :rating, :user_id)
   end
 
   def authorize_user

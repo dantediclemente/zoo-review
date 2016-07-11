@@ -1,6 +1,6 @@
 class ZoosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
-  before_action :authorize_user, except: [:index, :show, :search]
+  before_action :authorize_user, only: [:destroy]
 
   def index
     @zoos = Zoo.all
