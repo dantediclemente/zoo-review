@@ -1,9 +1,10 @@
 <h1><%= @zoo.name %></h1>
-
-  <h6><%= @zoo.address %></h6>
-  <h6><%= @zoo.city %></h6>
-  <h6><%= @zoo.state %></h6>
-  <h6><%= @zoo.zip %></h6>
+  <div class="zoo-info">
+    <h6><%= @zoo.address %></h6>
+    <h6><%= @zoo.city %></h6>
+    <h6><%= @zoo.state %></h6>
+    <h6><%= @zoo.zip %></h6>
+  </div>
 
 <%= form_for ([@zoo, @review]) do |f| %>
   <%= f.label :body, "Comment" %>
@@ -16,7 +17,7 @@
 <% end %>
 
 <% @reviews.each do |review| %>
-  <ul>
+  <ul class="review-info">
     <li><%= review.user.email %></li>
     <li>Rating: <%= review.rating %></li>
     <% if review.body != "" %>
@@ -26,7 +27,7 @@
 <% end %>
 
 <% if user_signed_in? %>
-  <% if current_user.id == @zoo.user_id %>
+  <% if current_user.admin? || current_user.id == @zoo.user_id %>
     <%= link_to "Edit Zoo", edit_zoo_path(@zoo) %>
     <%= link_to "Delete Zoo", zoo_path(@zoo), data: { :confirm => "Are you sure?" }, method: :delete %>
   <% end %>
