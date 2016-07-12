@@ -15,7 +15,6 @@
     <% if review.body != "" %>
       <li><%= review.body %></li>
     <% end %>
-    <p>Vote Count: <%= @review.vote %></p>
     <% if user_signed_in? %>
       <% if current_user.id == review.user_id %>
         <%= link_to "Edit Review", edit_zoo_review_path(@zoo, review) %>
