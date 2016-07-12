@@ -1,8 +1,11 @@
 <h1 class="row">Zoos</h1>
-<ul>
-  <% @zoos.each do |zoo| %>
-  <li>
-    <%= link_to zoo.name, zoo_path(zoo) %>
-  </li>
-  <% end %>
-</ul>
+
+<div id="zoo-index">
+  <ul>
+    <% @zoos.each do |zoo| %>
+    <li>
+      <%= link_to zoo.name, zoo_path(zoo) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
