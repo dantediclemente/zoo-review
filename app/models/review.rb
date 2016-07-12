@@ -14,4 +14,18 @@ class Review < ActiveRecord::Base
   validates :rating, inclusion: { in: 1..5, message: 'Rating must be between 1 - 5' }
   validates :user_id, presence: true
   validates :zoo_id, presence: true
+
+  def vote_up
+    @zoo = Zoo.find(params[:zoo_id])
+    @review = @zoo.find(params[:id])
+    @vote = @review.vote
+    @vote += 1
+  end
+
+  def vote_down
+    @zoo = Zoo.find(params[:zoo_id])
+    @review = @zoo.find(params[:id])
+    @vote = @review.vote
+    @vote -= 1
+  end
 end
