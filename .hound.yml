@@ -101,7 +101,7 @@ GuardClause:
   Enabled: false
 
 IfUnlessModifier:
-  Enabled: false
+  Enabled: true
 
 IfWithSemicolon:
   Enabled: false
@@ -128,7 +128,7 @@ ModuleFunction:
   Enabled: false
 
 NegatedIf:
-  Enabled: false
+  Enabled: true
 
 NegatedWhile:
   Enabled: false
