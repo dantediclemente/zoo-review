@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @rating_collection = Review::RATING
 
     if @review.save
+      ReviewMailer.new_review(@review).deliver_later
       flash[:notice] = "Review created successfully"
       redirect_to zoo_path(@zoo)
     else

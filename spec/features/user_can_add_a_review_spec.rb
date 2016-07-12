@@ -11,5 +11,6 @@ feature "visitor sees a list of reviews for zoo" do
     expect(page).to have_content "Review created successfully"
     expect(page).to have_content "Zoo 1"
     expect(page).to have_content "This zoo is awesome!"
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 end
