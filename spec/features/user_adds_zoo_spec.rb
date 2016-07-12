@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature "visitor sees a list of zoos" do
+feature "visitor can add zoo" do
   scenario "user adds a zoo successfully" do
     log_in_user
     visit new_zoo_path
@@ -14,6 +14,7 @@ feature "visitor sees a list of zoos" do
     expect(page).to have_content "Franklin Park Zoo"
     expect(page).to have_content "105 Beach St"
   end
+
   scenario "visitor does not provide proper information for a Zoo" do
     log_in_user
     visit new_zoo_path
@@ -26,10 +27,12 @@ feature "visitor sees a list of zoos" do
     expect(page).to have_content "Zip is the wrong length (should be 5 characters)"
     expect(page).to have_content "Zip is not a number"
   end
+
   scenario "user not signed in tries to create zoo" do
     visit new_zoo_path
     expect(page).to have_content "You need to sign in or sign up before continuing."
-    expect(page).to have_content "Log in"
+    expect(page).to have_content "Sign In"
+    expect(page).to have_content "Sign Up"
     expect(page).to have_content "Email"
     expect(page).to have_content "Password"
   end
