@@ -7,7 +7,7 @@ feature "visitor can add zoo" do
     fill_in 'Name', with: "Franklin Park Zoo"
     fill_in 'Address', with: "105 Beach St"
     fill_in 'City', with: "Boston"
-    fill_in 'State', with: "Massachusetts"
+    select "Massachusetts", from: "State"
     fill_in 'Zip', with: "02111"
     click_button "Add Zoo"
     expect(page).to have_content "Zoo added successfully"
