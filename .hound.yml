@@ -101,7 +101,7 @@ GuardClause:
   Enabled: false
 
 IfUnlessModifier:
-  Enabled: false
+  Enabled: true
 
 IfWithSemicolon:
   Enabled: false
@@ -128,7 +128,7 @@ ModuleFunction:
   Enabled: false
 
 NegatedIf:
-  Enabled: false
+  Enabled: true
 
 NegatedWhile:
   Enabled: false
@@ -210,7 +210,7 @@ WhileUntilModifier:
   Enabled: false
 
 WordArray:
-  Enabled: false
+  Enabled: true
 
 # Lint
 
@@ -279,4 +279,4 @@ Metrics/AbcSize:
 
 ruby:
   config_file: .ruby-style.yml
-  enabled: true 
+  enabled: true
