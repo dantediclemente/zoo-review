@@ -2,21 +2,6 @@ require "rails_helper"
 require 'pry'
 
 describe ProfilePhotoUploader do
-  # include CarrierWave::Test::Matchers
-  # let(:user) { double('user') }
-  #
-  # let(:uploader) { ProfilePhotoUploader.new(user, :profile_photo) }
-  #
-  # before do
-  #   ProfilePhotoUploader.enable_processing = true
-  #   File.open("#{Rails.root}/spec/support/images/photo.png") { |f| uploader.store!(f) }
-  # end
-  #
-  # after do
-  #   ProfilePhotoUploader.enable_processing = false
-  #   uploader.remove!
-  # end
-
   feature "profile photo" do
     scenario "user uploads a profile photo" do
       visit root_path
@@ -45,6 +30,4 @@ describe ProfilePhotoUploader do
       expect(page).to_not have_css("img")
     end
   end
-
-
 end
