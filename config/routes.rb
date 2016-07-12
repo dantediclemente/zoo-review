@@ -14,5 +14,4 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: [:create, :edit, :update, :destroy]
   end
-
 end
