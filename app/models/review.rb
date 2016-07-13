@@ -29,6 +29,6 @@ class Review < ActiveRecord::Base
         end
       end
     end
-    return count
+    count
   end
 end
