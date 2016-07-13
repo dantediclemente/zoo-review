@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   root to: "zoos#index"
 
   namespace :api do
-    resources :zoos, only: [:index] do
-      resources :reviews, only: [:show]
-    end
+    resources :zoos, only: [:index]
   end
 
   resources :zoos do
