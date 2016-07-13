@@ -1,9 +1,11 @@
-<%= form_for ([@zoo, @review]) do |f| %>
-  <%= f.label :body, "Comment" %>
-  <%= f.text_field :body %>
+<div class="row large-6 columns">
+  <%= form_for ([@zoo, @review]) do |f| %>
+    <%= f.label :body, "Comment" %>
+    <%= f.text_field :body %>
 
-  <%= f.label :rating, "Rating"%>
-  <%= f.collection_radio_buttons(:rating, @rating_collection, :first, :last) %>
+    <%= f.label :rating, "Rating"%>
+    <%= f.collection_radio_buttons(:rating, @rating_collection, :first, :last) %><br>
 
-  <%= f.submit "Add Review"%>
-<% end %>
+    <%= f.submit "Add Review"%>
+    <% end %>
+</div>
