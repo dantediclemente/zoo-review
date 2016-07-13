@@ -18,7 +18,7 @@ class Review < ActiveRecord::Base
 
   def vote_count(review)
     count = 0
-    if review.votes == [] || review.votes == nil
+    if review.votes == [] || review.votes.nil?
       return count
     else
       review.votes.each do |vote|
