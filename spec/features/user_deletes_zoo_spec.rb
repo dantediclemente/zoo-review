@@ -4,7 +4,6 @@ feature "user deletes zoo" do
     create_zoo
     click_link "Delete Zoo"
     expect(page).to have_content "Zoo deleted successfully"
-    expect(page).to have_content "Zoos"
   end
   scenario "user that didn't create zoo can't delete zoo" do
     create_zoo
