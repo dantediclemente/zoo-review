@@ -8,6 +8,7 @@ class Review < ActiveRecord::Base
   ].freeze
   belongs_to :zoo
   belongs_to :user
+  has_many :votes
 
   validates :rating, presence: true
   validates :rating, numericality: { only_integer: true }
@@ -15,17 +16,19 @@ class Review < ActiveRecord::Base
   validates :user_id, presence: true
   validates :zoo_id, presence: true
 
-  def vote_up
-    @zoo = Zoo.find(params[:zoo_id])
-    @review = @zoo.find(params[:id])
-    @vote = @review.vote
-    @vote += 1
-  end
-
-  def vote_down
-    @zoo = Zoo.find(params[:zoo_id])
-    @review = @zoo.find(params[:id])
-    @vote = @review.vote
-    @vote -= 1
+  def vote_count(review)
+    count = 0
+    if review.votes == [] || review.votes == nil
+      return count
+    else
+      review.votes.each do |vote|
+        if vote.up_vote == true
+          count += 1
+        elsif vote.down_vote == true
+          count -= 1
+        end
+      end
+    end
+    return count
   end
 end

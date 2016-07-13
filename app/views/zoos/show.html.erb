@@ -12,6 +12,9 @@
   <ul class="review-info">
     <li><%= review.user.email %></li>
     <li>Rating: <%= review.rating %></li>
+    <div>
+      <li><%= review.vote_count(review) %></li>
+    </div>
     <% if review.body != "" %>
       <li><%= review.body %></li>
     <% end %>

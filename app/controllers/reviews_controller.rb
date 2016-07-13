@@ -10,6 +10,11 @@ class ReviewsController < ApplicationController
     @rating_collection = Review::RATING
 
     if @review.save
+      vote = Vote.create(user_id: current_user.id, review_id: @review.id)
+      @review.votes << vote
+      binding.pry
+
+
       ReviewMailer.new_review(@review).deliver_later
       flash[:notice] = "Review created successfully"
       redirect_to zoo_path(@zoo)
