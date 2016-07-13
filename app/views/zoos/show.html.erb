@@ -21,9 +21,9 @@
       <li><%= review.body %></li>
     <% end %>
     <% if user_signed_in? %>
-      <% if current_user.id == review.user_id %>
-        <%= link_to "Edit Review", edit_zoo_review_path(@zoo, review) %>
-        <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %>
+      <% if current_user.admin? || current_user.id == review.user_id %>
+          <%= link_to "Edit Review", edit_zoo_review_path(@zoo, review) %>
+          <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %>
       <% end %>
     <% end %>
   </ul>
