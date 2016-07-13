@@ -15,6 +15,10 @@ class ReviewsController < ApplicationController
       redirect_to zoo_path(@zoo)
     else
       flash[:errors] = @review.errors.full_messages.join(", ")
+      @zoo = Zoo.find(params[:zoo_id])
+      @review = Review.new
+      @rating_collection = Review::RATING
+      @reviews = @zoo.reviews
       render :'zoos/show'
     end
   end
