@@ -1,6 +1,7 @@
 <h3>Edit Zoo</h3>
 
-<%= form_for @zoo do |f| %>
+<div class="row large-6 columns ">
+  <%= form_for @zoo do |f| %>
   <%= f.label :name, "Name" %>
   <%= f.text_field :name %>
 
@@ -16,5 +17,6 @@
   <%= f.label :zip , "Zip Code" %>
   <%= f.text_field :zip %>
 
-  <%= f.submit "Update Zoo"%>
-<% end %>
+  <%= f.submit "Add Zoo"%>
+  <% end %>
+</div>

@@ -1,18 +1,26 @@
-<h1><%= @zoo.name %></h1>
-  <div class="zoo-info">
-    <h6><%= @zoo.address %></h6>
-    <h6><%= @zoo.city %></h6>
-    <h6><%= @zoo.state %></h6>
-    <h6><%= @zoo.zip %></h6>
-  </div>
+<div class="row">
+  <h3 class="zoo-name"><%= @zoo.name %></h3>
+  <div class="zoo-info large-6 columns">
+    <h6><span>Street:</span> <%= @zoo.address %></h6>
+    <h6><span>City:</span> <%= @zoo.city %></h6>
+    <h6><span>State:</span> <%= @zoo.state %></h6>
+    <h6><span>Zip Code:</span> <%= @zoo.zip %></h6>
+
+  <% if user_signed_in? %>
+  <% if current_user.admin? || current_user.id == @zoo.user_id %><br>
+  <%= link_to "Edit Zoo", edit_zoo_path(@zoo) %>
+  <%= link_to "Delete Zoo", zoo_path(@zoo), data: { :confirm => "Are you sure?" }, method: :delete %>
+  <% end %>
+  <% end %>
 
   <%= render "zoos/review_form" %>
 
-<% @reviews.each do |review| %>
-  <ul class="review-info">
-    <li><%= review.user.email %></li>
-    <li>Rating: <%= review.rating %></li>
-    <% if review.body != "" %>
+  <div class="large-6 large-3-offset columns">
+    <% @reviews.each do |review| %>
+    <ul class="review-info">
+      <li><%= review.user.email %></li>
+      <li>Rating: <%= review.rating %></li>
+      <% if review.body != "" %>
       <li><%= review.body %></li>
     <% end %>
     <% if user_signed_in? %>
@@ -20,13 +28,8 @@
           <%= link_to "Edit Review", edit_zoo_review_path(@zoo, review) %>
           <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %>
       <% end %>
+    </ul>
     <% end %>
-  </ul>
-<% end %>
-
-<% if user_signed_in? %>
-  <% if current_user.admin? || current_user.id == @zoo.user_id %>
-    <%= link_to "Edit Zoo", edit_zoo_path(@zoo) %>
-    <%= link_to "Delete Zoo", zoo_path(@zoo), data: { :confirm => "Are you sure?" }, method: :delete %>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+</div>
