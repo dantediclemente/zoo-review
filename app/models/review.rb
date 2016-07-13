@@ -22,9 +22,9 @@ class Review < ActiveRecord::Base
       return count
     else
       review.votes.each do |vote|
-        if vote.up_vote == true
+        if vote.up_vote == true && vote.down_vote == false
           count += 1
-        elsif vote.down_vote == true
+        elsif vote.down_vote == true && vote.up_vote == false
           count -= 1
         end
       end
