@@ -21,7 +21,7 @@ class App extends Component {
 
   render() {
     return(
-      <div>
+      <div className="row large-6 columns">
         <ZooIndex
           zoos={this.state.zoos}
         />

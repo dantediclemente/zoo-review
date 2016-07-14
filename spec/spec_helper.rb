@@ -52,7 +52,7 @@ def create_zoo
 end
 
 def write_review
-  visit root_path
+  visit zoos_path
   click_link "Franklin Park Zoo"
   fill_in 'Comment', with: "This zoo is awesome!"
   choose(5)

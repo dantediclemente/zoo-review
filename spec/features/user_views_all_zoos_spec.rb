@@ -8,7 +8,7 @@ feature "visitor sees a list of zoos" do
     expect(page).to have_link(zoo_2.name)
   end
   scenario "clicks link and is taken to show page for given zoo" do
-    visit root_path
+    visit zoos_path
     click_link(zoo_1.name)
     expect(page).to have_content zoo_1.name
     expect(page).to have_content zoo_1.address
