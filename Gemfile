@@ -9,6 +9,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem "carrierwave"
 gem 'fog'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'capybara'

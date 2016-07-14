@@ -14,4 +14,14 @@ class Review < ActiveRecord::Base
   validates :rating, inclusion: { in: 1..5, message: 'Rating must be between 1 - 5' }
   validates :user_id, presence: true
   validates :zoo_id, presence: true
+  has_many :votes, dependent: :destroy
+
+  def votes_total
+    if self.votes.nil?
+      return 0
+    else
+      votes_arr = self.votes.map { |v| v.value  }
+      total = votes_arr.inject(:+)
+    end
+  end
 end
