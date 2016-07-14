@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_photo, ProfilePhotoUploader
 
-  validates :email, uniqueness: true, presence: true
   validates :encrypted_password, presence: true
 
   def admin?
