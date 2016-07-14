@@ -53,7 +53,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:body, :rating, :user_id)
+    params.require(:review).permit(:body, :rating, :user_id, :vote_total)
   end
 
   def authorize_user

@@ -25,8 +25,18 @@
       <% if user_signed_in? %>
         <% if current_user.admin? || current_user.id == review.user_id %>
           <%= link_to "Edit Review", edit_zoo_review_path(@zoo, review) %>
-          <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %>
-        <% end %>
+          <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %><br>
+          <% end %>
+          <span class="upvote-<%= review.id %>">
+          <%= link_to "", review_votes_path(review, value: 1), class: "upvote fa fa-thumbs-up", data: { zooid: "#{@zoo.id}", reviewid: "#{review.id}" }, method: :post %>
+        </span>
+
+          <p class="total-votes-<%= review.id %>">
+            <%= review.vote_total %>
+          </p>
+          <span class="downvote-<%= review.id %>">
+            <%= link_to "", review_votes_path(review, value: -1), class: "downvote fa fa-thumbs-down", data: { zooid: "#{@zoo.id}", reviewid: "#{review.id}" }, method: :post  %>
+          </span>
       </ul>
     <% end %>
   <% end %>
