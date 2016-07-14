@@ -16,9 +16,8 @@
       <div class="top-bar-left">
         <ul class="menu">
           <li class="menu-text">ZOOTOPIA</li>
-          <li class="nav-buttons">
-            <%= link_to "Home", root_path %>
-          </li>
+          <li class="nav-buttons"><%= link_to "Home", root_path %></li>
+          <li class="nav-buttons"><%= link_to "Zoos", zoos_path %></li>
           <% if user_signed_in? %>
             <li class="nav-buttons"><%= link_to "Add Zoo", new_zoo_path %></li>
             <li class="nav-buttons"><%= link_to "Edit Profile", edit_user_registration_path %></li>
@@ -50,8 +49,6 @@
      <% end %>
 
     <%= yield %>
-
-
-
+    <%= render partial: '/layouts/footer' %>
   </body>
 </html>

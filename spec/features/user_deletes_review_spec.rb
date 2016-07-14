@@ -14,7 +14,7 @@ feature "user deletes review" do
   scenario "user that didn't create review can't delete review" do
     sign_out
     sign_in_as_dummy
-    visit root_path
+    visit zoos_path
     click_link "Franklin Park Zoo"
 
     expect(page).to have_content "Franklin Park Zoo"

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "zoos#index"
+
+  root 'homepage#index'
+
+  resources :homepage, only: [:index]
 
   namespace :api do
     resources :zoos, only: [:index]

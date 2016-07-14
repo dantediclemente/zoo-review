@@ -4,6 +4,18 @@
 ul {
   list-style: none;
 }
+.lion-image {
+  min-height: 100%;
+}
+
+html {
+  background-image: image-url("lion.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+};
+
 
 .menu-text {
   font-family: 'Shadows Into Light', cursive;
@@ -41,28 +53,22 @@ $text-color: #fff;
 .footer {
   background-color: $light-gray;
   color: $text-color;
-  padding: 2rem 4rem;
   text-align: center;
-
+  margin-bottom: 0;
+  margin-top: 200px;
+  position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 55px;
   i {
     font-size: 100px;
   }
-}
-
-.footer {
   h4 {
     color: $text-color;
-    font-size: 1em;
-    font-weight: 400;
-    text-transform: uppercase;
-
-    margin-top: 2.5rem;
-    margin-bottom: 10px;
-  }
-  p, a {
-    font-weight: 300;
-    font-size: .8em;
-    color: $text-color;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-top: .75em;
   }
 }
 
@@ -70,7 +76,7 @@ $text-color: #fff;
 .footer {
   .columns:nth-child(n+2) {
     border-left: 1px solid scale-color($text-color, $lightness: -30%);
-    min-height: 280px;
+    min-height: 10px;
   }
  }
 }
@@ -92,6 +98,10 @@ $text-color: #fff;
   margin-left: 0px;
   padding-bottom: 15px;
   padding-top: 10px;
+}
+
+#zoo-index {
+  text-align: center;
 }
 
 span {

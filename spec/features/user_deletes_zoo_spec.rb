@@ -9,7 +9,7 @@ feature "user deletes zoo" do
     create_zoo
     sign_out
     sign_in_as_dummy
-    visit root_path
+    visit zoos_path
     click_link "Franklin Park Zoo"
     expect(page).to have_content "Franklin Park Zoo"
     expect(page).to have_content "Boston"
