@@ -29,14 +29,14 @@
           <%= link_to "Delete Review", zoo_review_path(@zoo, review), data: { :confirm => "Are you sure?" }, method: :delete %><br>
           <% end %>
           <span class="upvote-<%= review.id %>">
-          <%= link_to "Vote Up", review_votes_path(review, value: 1), class: "upvote fa fa-thumbs-up", id: "upvote-#{review.id}", data: { zooid: "#{@zoo.id}", reviewid: "#{review.id}" } %>
+          <%= link_to "", review_votes_path(review, value: 1), class: "upvote fa fa-thumbs-up", id: "upvote-#{review.id}", data: { zooid: "#{@zoo.id}", reviewid: "#{review.id}" } %>
         </span>
 
           <p class="total-votes-<%= review.id %>">
             <%= review.vote_total %>
           </p>
           <span class="downvote-<%= review.id %>">
-            <%= link_to "Vote Down", review_votes_path(review, value: -1), class: "downvote fa fa-thumbs-down", id: "downvote-#{review.id}", data: { zooid: "#{@zoo.id}", reviewid: "#{review.id}" } %>
+            <%= link_to "", review_votes_path(review, value: -1), class: "downvote fa fa-thumbs-down", id: "downvote-#{review.id}", data: { zooid: "#{@zoo.id}", reviewid: "#{review.id}" } %>
           </span>
       </ul>
     <% end %>
