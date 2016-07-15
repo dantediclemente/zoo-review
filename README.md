@@ -9,7 +9,7 @@ This website provides a platform upon which to muse upon the myriad of zoos! Thi
 ![Code Climate](https://codeclimate.com/github/dantediclemente/zoo-review.png)
 [![Coverage Status](https://coveralls.io/repos/github/dantediclemente/zoo-review/badge.svg?branch=master)](https://coveralls.io/github/dantediclemente/zoo-review?branch=master)
 
-Authors:
+Authors: 
   -Dante DiClemente, https://github.com/dantediclemente
   -Ben Darcy, https://github.com/bendarcy22
   -Yevgeniya Zavorotko, https://github.com/yvga
