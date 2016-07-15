@@ -368,6 +368,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   fog
+  fog-aws
   font-awesome-rails
   foundation-rails
   jquery-rails
