@@ -10,6 +10,7 @@ gem 'devise'
 gem "carrierwave"
 gem 'fog'
 gem "font-awesome-rails"
+gem 'fog-aws'
 
 group :development, :test do
   gem 'capybara'

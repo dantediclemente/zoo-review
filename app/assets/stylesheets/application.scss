@@ -5,12 +5,9 @@
 ul {
   list-style: none;
 }
-.lion-image {
-  min-height: 100%;
-}
 
 html {
-  background-image: image-url("giraffe.jpg");
+  background-image: image-url("giraf.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -60,7 +57,7 @@ $text-color: #fff;
   color: $text-color;
   text-align: center;
   margin-bottom: 0;
-  margin-top: 200px;
+  margin-top: 10px;
   position: fixed;
     bottom: 0px;
     width: 100%;

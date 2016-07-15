@@ -17,8 +17,7 @@ class VotesController < ApplicationController
     if @vote.save
       @review.update_attributes(vote_total: @review.votes_total)
       @review.save
-      redirect_to :back
-      # render json: { vote_total: @review.votes_total, review_id: @review.id }
+      render json: { vote_total: @review.votes_total, review_id: @review.id }
     else
       flash[:error] = 'Something went wrong with your request.'
       redirect_to :back
